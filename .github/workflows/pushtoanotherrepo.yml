@@ -29,4 +29,4 @@ jobs:
           echo Ready to push to another repo,
           git remote add origin2 https://github.com/mtricentis
           git remote -v
-          git push origin2 master:master
+          git push origin2 testHelm:actions2
