@@ -27,6 +27,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Ready to push to another repo,
-          git remote add origin2 https://github.com/mtricentis
+          git remote add origin2 https://github.com/mtricentis/actions2
           git remote -v
-          git push origin2 testHelm:actions2
+          git push origin2 master
