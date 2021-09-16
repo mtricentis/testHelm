@@ -31,5 +31,6 @@ jobs:
           echo Ready to push to another repo,
           git remote add origin2 https://github.com/mtricentis/actions2
           git remote -v
-          git commit -m "initial commit"
+          git add --all
+          git commit -m "hi ra commit"
           git push origin2 master
