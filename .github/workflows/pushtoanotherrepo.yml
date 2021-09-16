@@ -31,5 +31,5 @@ jobs:
           echo Ready to push to another repo,
           git init
           #git remote add origin2 git@github.com:mtricentis/actions2.git
-          git remote add origin2 https://${USERNAME}:${PASSWORD}@github.com/mtricentis/actions2.git
+          git remote add origin2 https://$USERNAME:$PASSWORD@github.com/mtricentis/actions2.git
           git push origin2 main:main
