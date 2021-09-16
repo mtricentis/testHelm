@@ -34,4 +34,4 @@ jobs:
           git add --all
           git commit -m "hi ra commit"
           git checkout -b actions2 testHelm
-          git push origin master
+          git push origin2 master
