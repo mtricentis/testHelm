@@ -36,9 +36,10 @@ jobs:
         REPO_PATH: actions2
       with:
         fetch-depth: 0
-        token: ${{ secrets.TOKEN }}
+        #token: ${{ secrets.TOKEN }}
         repository: "${{ env.REPO }}"
         path: ${{ env.REPO_PATH }}
+        ssh_private_key: ${{ secrets.TOKEN }}
     - name: Copy source to new repo
       env:
         SOURCE: /home/runner/work/_actions/mtricentis/testHelm/main
