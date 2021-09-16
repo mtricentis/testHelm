@@ -43,7 +43,7 @@ jobs:
     - name: Copy source to new repo
       env:
         SOURCE: /home/runner/work/_actions/mtricentis/testHelm/main
-        TARGET: actions2/main
+        TARGET: /home/runner/work/_actions/mtricentis/actions2/main
       run:
         cp ${{ env.SOURCE }} ${{ env.TARGET }}
     - name: Push
