@@ -28,14 +28,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Checkout Source repo
       uses: actions/checkout@v2
-      env:
-        REPO: mtricentis/testHelm
-        REPO_PATH: testHelm
-      with:
-        fetch-depth: 0
-        token: ${{ secrets.TOKEN }}
-        repository: "${{ env.REPO }}"
-        path: ${{ env.REPO_PATH }}
+      
     - name: Checkout target repo
       uses: actions/checkout@v2
       env:
