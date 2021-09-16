@@ -33,4 +33,5 @@ jobs:
           git remote -v
           git add --all
           git commit -m "hi ra commit"
-          git push origin2 master
+          git checkout -b actions2 testHelm
+          git push origin master
