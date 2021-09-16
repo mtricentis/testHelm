@@ -29,7 +29,7 @@ jobs:
     - name: Checkout Source repo
       uses: actions/checkout@v2
       env:
-        REPO: /mtricentis/testHelm
+        REPO: mtricentis/testHelm
         REPO_PATH: testHelm
       with:
         fetch-depth: 0
@@ -39,7 +39,7 @@ jobs:
     - name: Checkout target repo
       uses: actions/checkout@v2
       env:
-        REPO: /mtricentis/actions2
+        REPO: mtricentis/actions2
         REPO_PATH: actions2
       with:
         fetch-depth: 0
@@ -54,7 +54,7 @@ jobs:
         cp ${{ env.SOURCE }} ${{ env.TARGET }}
     - name: Push
       env:
-        REPO_PATH: /mtricentis/actions2
+        REPO_PATH: mtricentis/actions2
         GIT_USERNAME: mtricentis
         GIT_EMAIL: action@github.com
       run: |
