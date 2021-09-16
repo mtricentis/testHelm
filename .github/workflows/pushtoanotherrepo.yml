@@ -28,4 +28,6 @@ jobs:
         run: |
           git checkout -b mtricentis/actions-$COMMIT
           echo Ready to push to another repo,
-          git push origin https://github.com/mtricentis/actions-$COMMIT
+          git remote add origin2 https://github.com/mtricentis
+          git remote -v
+          git push origin2 actions-$COMMIT
