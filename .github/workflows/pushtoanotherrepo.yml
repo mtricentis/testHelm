@@ -29,9 +29,7 @@ jobs:
           git config user.name "user"
           git config user.email "dev@example.com"
           echo Ready to push to another repo,
-          git remote add origin2 git@github.com:mtricentis/actions2.git
+          git remote add origin git@github.com:mtricentis/actions2.git
           git remote -v
-          git add --all
           git commit -m "hi ra commit"
-          git checkout -b actions2 testHelm
           git push origin2 master
