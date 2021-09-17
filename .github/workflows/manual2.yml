@@ -37,7 +37,9 @@ jobs:
       
     - name: Checkout target repo
       uses: actions/checkout@v2
-      
+      env:
+        REPO: mtricentis/actions2
+        REPO_PATH: actions2
       with:
         fetch-depth: 0
         #token: ${{ secrets.TOKEN }}
