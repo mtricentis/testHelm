@@ -53,7 +53,8 @@ jobs:
         GIT_USERNAME: mtricentis
         GIT_EMAIL: action@github.com
       run: |
-        echo pwd
+        pwd
+        ls -ltr
         cd ${{ env.REPO_PATH }}
         git config --local user.name "${{ env.GIT_USERNAME }}"
         git config --local user.email "${{ env.GIT_EMAIL }}"
