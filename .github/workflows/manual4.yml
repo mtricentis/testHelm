@@ -23,19 +23,21 @@ jobs:
     container: pandoc/latex
     steps:
       - uses: actions/checkout@v2
-      - name: Install mustache (to update the date)
-        run:  apk add ruby && gem install mustache
-    
-      - name: Pushes to another repository
-        id: push_directory
-        uses: mtricentis/actions2@main
+      - name: test things
+        run: |
+          ls -l
+      - name: checks installation pandoc
+        run: |
+          which pandoc
+      - name: creates output
+        run: |
+          mkdir output
+          ls -l
+          sh ./build.sh
+          ls -lR .
+      - name: push directory
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN }}
-        with:
-          source-directory: 'output'
-          destination-github-username: 'mtricentis'
-          destination-repository-name: 'actions2'
-          user-email: mtricentis@pina.cat
-          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
-          target-branch: main
+        run: |
+          sh ./push-to-another-git.sh output/ mtricentis actions2
      
