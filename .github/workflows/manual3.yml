@@ -57,7 +57,7 @@ jobs:
         git remote set-url origin git@github.com:mtricentis/actions2.git
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
-              
+        ssh -vT git@github.com
         git branch -ra
         pwd
         
