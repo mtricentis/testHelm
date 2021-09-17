@@ -39,11 +39,11 @@ jobs:
         #token: ${{ secrets.TOKEN }}
         repository: "${{ env.REPO }}"
         path: ${{ env.REPO_PATH }}
-        ssh_private_key: ${{ secrets.TOKEN }}
+        #ssh_private_key: ${{ secrets.TOKEN }}
     - name: Copy source to new repo
       env:
-        SOURCE: /home/runner/work/_actions/mtricentis/testHelm/main
-        TARGET: /home/runner/work/_actions/mtricentis/actions2/main
+        SOURCE: /home/runner/work/mtricentis/testHelm/main
+        TARGET: /home/runner/work/mtricentis/actions2/main
       run:
         cp ${{ env.SOURCE }} ${{ env.TARGET }}
     - name: Push
