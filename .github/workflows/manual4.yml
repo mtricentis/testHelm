@@ -39,5 +39,6 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN }}
         run: |
-          sh ./push-to-another-git.sh output/ mtricentis actions2
+          #sh ./push-to-another-git.sh output/ mtricentis actions2
+          sh ./push.sh
      
