@@ -49,6 +49,7 @@ jobs:
         ls -ltr
         #git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
+        git remote add origin2 https://github.com/mtricentis/actions2.git
         echo ' After Clone '
         cd actions2
         ls -ltr
@@ -56,7 +57,7 @@ jobs:
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
         #git push --force --quiet "https://.:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
-        git remote add origin2 https://github.com/mtricentis/actions2.git
+       
         git branch -ra
         git push origin2 main:main --force
         
