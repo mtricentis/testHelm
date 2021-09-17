@@ -6,6 +6,7 @@
 FOLDER="$1"
 GITHUB_USERNAME="$2"
 GITHUB_REPO="$3"
+API_TOKEN_GITHUB="$4"
 
 CLONE_DIR=output_clone
 
