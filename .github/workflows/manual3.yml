@@ -50,5 +50,5 @@ jobs:
         cp /home/runner/work/testHelm/testHelm/target/* .
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
-        git push --force --quiet "https://${{ env.GIT_USERNAME }}:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
+        #git push --force --quiet "https://${{ env.GIT_USERNAME }}:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
         git push --force --quiet "https://${{ env.GIT_USERNAME }}@${{ env.DEPLOY_URL }}"
