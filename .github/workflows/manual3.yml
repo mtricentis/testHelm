@@ -58,6 +58,8 @@ jobs:
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
               
         git branch -ra
+        pwd
+        cd /home/runner/work/actions2/actions2
         git push --force --quiet "https://.:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
                 
         #git push --force --quiet "https://github.com/mtricentis/actions2"
