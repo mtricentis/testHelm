@@ -48,7 +48,7 @@ jobs:
         pwd
         ls -ltr
         #git remote rm origin
-        git remote set-url origin2 git@github.com:mtricentis/actions2.git
+        #git remote set-url origin2 git@github.com:mtricentis/actions2.git
         #git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         
@@ -64,7 +64,7 @@ jobs:
         git branch -ra
         pwd
         
-        git push origin2 main:main--force 
+        git push main:main--force 
         #git push --force --quiet "https://.:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
                 
         #git push --force --quiet "https://github.com/mtricentis/actions2"
