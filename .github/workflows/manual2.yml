@@ -47,7 +47,7 @@ jobs:
       run: |
         pwd
         ls -ltr
-        cp ${{ env.SOURCE }} ${{ env.TARGET }}
+        cp -r ${{ env.SOURCE }} ${{ env.TARGET }}
     - name: Push
       env:
         REPO_PATH: mtricentis/actions2
