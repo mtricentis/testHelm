@@ -45,7 +45,8 @@ jobs:
         SOURCE: /home/runner/work/mtricentis/testHelm/main
         TARGET: /home/runner/work/mtricentis/actions2/main
       run: |
-        echo pwd
+        pwd
+        ls -ltr
         cp ${{ env.SOURCE }} ${{ env.TARGET }}
     - name: Push
       env:
@@ -53,8 +54,6 @@ jobs:
         GIT_USERNAME: mtricentis
         GIT_EMAIL: action@github.com
       run: |
-        pwd
-        ls -ltr
         cd ${{ env.REPO_PATH }}
         git config --local user.name "${{ env.GIT_USERNAME }}"
         git config --local user.email "${{ env.GIT_EMAIL }}"
