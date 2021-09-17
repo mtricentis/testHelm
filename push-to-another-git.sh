@@ -10,6 +10,8 @@ GITHUB_REPO="$3"
 
 CLONE_DIR=output_clone
 
+pwd
+
 apt-get update && apt-get install git
 apk add --no-cache git
 
