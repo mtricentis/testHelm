@@ -56,8 +56,9 @@ jobs:
         cd actions2
         ls -ltr
         cp /home/runner/work/testHelm/testHelm/target/test2.txt .
-        git remote set-url origin2 https://github.com/mtricentis/actions2
+        git remote set-url origin https://github.com/mtricentis/actions2
         git branch -ra
+        git remote -v
         #git remote add --mirror=push https://github.com/mtricentis/actions2
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
