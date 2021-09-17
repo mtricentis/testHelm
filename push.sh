@@ -4,13 +4,13 @@ GIT_USERNAME=mtricentis
 GIT_EMAIL=mtricentis@github.com
 DEPLOY_URL=github.com/mtricentis/actions2
       
-git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/testHelm target
+git clone https://.:$API_TOKEN@github.com/mtricentis/testHelm target
 echo ' testHelm directory'
 pwd
 ls -ltr
-git config --global user.name "${{ env.GIT_USERNAME }}"
-git config --global user.email "${{ env.GIT_EMAIL }}"
-git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
+git config --global user.name "$GIT_USERNAME"
+git config --global user.email "$GIT_EMAIL"
+git clone https://.:$API_TOKEN@github.com/mtricentis/actions2 actions2
 echo ' After Clone '
 cd actions2
 ls -ltr
