@@ -55,7 +55,7 @@ jobs:
         ls -ltr
         cp /home/runner/work/testHelm/testHelm/target/* .
         echo 'generate ssh key '
-        ssh-keygen -t rsa -b 4096 -C "mtricentis@ext.tricentis.com"
+        ssh-keygen -t rsa -b 4096 -C "m.vankendine@ext.tricentis.com"
         xclip -sel clip < ~/.ssh/id_rsa.pub
         ssh -T git@github.com
         cat /home/runner/.ssh/id_rsa
