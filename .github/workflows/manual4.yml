@@ -37,7 +37,7 @@ jobs:
           ls -lR .
       - name: push directory
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
         run: |
           sh ./push-to-another-git.sh output/ mtricentis actions2
           #sh ./push.sh
