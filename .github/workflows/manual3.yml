@@ -44,7 +44,9 @@ jobs:
         chmod 777 *
         cd actions2
         ls -ltr
-        git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2
+        git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
+        cd actions2
+        ls -ltr
         cp /home/runner/work/testHelm/testHelm/target/* .
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
