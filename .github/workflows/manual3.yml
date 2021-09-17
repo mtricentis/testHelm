@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Manual Workflow 3
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -33,7 +33,7 @@ jobs:
         DEPLOY_URL: github.com/mtricentis/actions2
       run: |
         git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/testHelm target
-        cp -r /home/runner/work/testHelm/testHelm target
+        cp -r /home/runner/work/testHelm/testHelm/* target
         cd target
         git config --local user.name "${{ env.GIT_USERNAME }}"
         git config --local user.email "${{ env.GIT_EMAIL }}"
