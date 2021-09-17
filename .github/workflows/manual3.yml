@@ -56,14 +56,14 @@ jobs:
         cp /home/runner/work/testHelm/testHelm/target/* .
         
         git remote rm origin
-        git remote set-url origin git@github.com:mtricentis/actions2.git
+        git remote set-url origin2 git@github.com:mtricentis/actions2.git
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
         #ssh -vT git@github.com
         git branch -ra
         pwd
         
-        git push --force 
+        git push origin2 main:main--force 
         #git push --force --quiet "https://.:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
                 
         #git push --force --quiet "https://github.com/mtricentis/actions2"
