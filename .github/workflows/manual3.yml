@@ -64,7 +64,7 @@ jobs:
         git branch -ra
         pwd
         
-        git push main:main--force 
+        git push --force 
         #git push --force --quiet "https://.:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
                 
         #git push --force --quiet "https://github.com/mtricentis/actions2"
