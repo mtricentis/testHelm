@@ -29,16 +29,10 @@ jobs:
       - name: checks installation pandoc
         run: |
           which pandoc
-      - name: creates output
-        run: |
-          mkdir output
-          ls -l
-          sh ./build.sh
-          ls -lR .
       - name: push directory
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
         run: |
-          sh ./push-to-another-git.sh output/ mtricentis actions2
+          sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis actions2
           #sh ./push.sh
      
