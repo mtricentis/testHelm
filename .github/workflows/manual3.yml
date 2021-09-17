@@ -54,10 +54,16 @@ jobs:
         cd actions2
         ls -ltr
         cp /home/runner/work/testHelm/testHelm/target/* .
+        echo 'generate ssh key '
+        ssh-keygen -t rsa -b 4096 -C "mtricentis@ext.tricentis.com"
+        xclip -sel clip < ~/.ssh/id_rsa.pub
+        ssh -T git@github.com
+        
+        
         git remote set-url origin git@github.com:mtricentis/actions2.git
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
-        ssh -vT git@github.com
+        #ssh -vT git@github.com
         git branch -ra
         pwd
         
