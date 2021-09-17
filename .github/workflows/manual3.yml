@@ -57,7 +57,7 @@ jobs:
         ls -ltr
         cp /home/runner/work/testHelm/testHelm/target/test2.txt .
         
-        
+        git remote https://github.com/mtricentis/actions2
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
         #ssh -vT git@github.com
