@@ -33,6 +33,6 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
         run: |
-          sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis actions2
+          sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2
           #sh ./push.sh
      
