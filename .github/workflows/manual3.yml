@@ -48,7 +48,7 @@ jobs:
         pwd
         ls -ltr
         #git remote rm origin
-        git remote set-url origin2 https://github.com/mtricentis/actions2
+       
         #git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         
@@ -56,12 +56,13 @@ jobs:
         cd actions2
         ls -ltr
         cp /home/runner/work/testHelm/testHelm/target/test2.txt .
-        
+        git remote set-url origin2 https://github.com/mtricentis/actions2
+        git branch -ra
         #git remote add --mirror=push https://github.com/mtricentis/actions2
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
         #ssh -vT git@github.com
-        git branch -ra
+        
         pwd
         
         git push --force 
