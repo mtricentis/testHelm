@@ -37,8 +37,8 @@ jobs:
         
         cd target
         ls -ltr
-        git config user.name "${{ env.GIT_USERNAME }}"
-        git config user.email "${{ env.GIT_EMAIL }}"
+        git config --global user.name "${{ env.GIT_USERNAME }}"
+        git config --global user.email "${{ env.GIT_EMAIL }}"
         cd /home/runner/work/
         mkdir actions2
         chmod 777 *
