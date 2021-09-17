@@ -33,10 +33,12 @@ jobs:
         DEPLOY_URL: github.com/mtricentis/actions2
       run: |
         git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/testHelm target
-        cp -r /home/runner/work/testHelm/testHelm/* target
+        #cp -r /home/runner/work/testHelm/testHelm/* target
+        
         cd target
+        ls -ltr
         git config --local user.name "${{ env.GIT_USERNAME }}"
         git config --local user.email "${{ env.GIT_EMAIL }}"
-        git add index.yaml
+        git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
         git push --force --quiet "https://${{ env.GIT_USERNAME }}:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
