@@ -22,9 +22,11 @@ ls -l
 
 cd "$CLONE_DIR"
 # find needs to be in the git repository directory
-find . | grep -v ".git" | grep -v "^\.*$" | xargs rm -rf # delete all files (to handle deletions)
+find . | grep -v ".git" | grep -v "^\.*$" #| xargs rm -rf # delete all files (to handle deletions)
 
-cp -r "../$FOLDER"/* .
+#rsync -avr --exclude='.github' --exclude='.git' "../$FOLDER"/* .
+
+#cp -r "../$FOLDER"/* .
 
 echo "After cd $CLONE_DIR"
 
