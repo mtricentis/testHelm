@@ -55,7 +55,7 @@ jobs:
         echo ' After Clone '
         cd actions2
         ls -ltr
-        cp /home/runner/work/testHelm/testHelm/target/* .
+        cp /home/runner/work/testHelm/testHelm/target/test2.txt .
         
         
         git add --all
