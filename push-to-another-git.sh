@@ -31,7 +31,7 @@ ls -la
 
 git add .
 git commit --message "Update from $GITHUB_REPOSITORY"
-git push origin master
+git push origin main
 
 cd ..
 echo "Done!"
