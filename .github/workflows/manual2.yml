@@ -29,6 +29,12 @@ jobs:
     - name: Checkout Source repo
       uses: actions/checkout@v2
       
+    - name: Change Directory
+      run: |
+        pwd
+        cd /home/runner/work
+        ls -ltr
+      
     - name: Checkout target repo
       uses: actions/checkout@v2
       env:
