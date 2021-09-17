@@ -48,7 +48,7 @@ jobs:
         pwd
         ls -ltr
         #git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
-        git clone https://github.com/mtricentis/actions2 actions2
+        git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         echo ' After Clone '
         cd actions2
         ls -ltr
