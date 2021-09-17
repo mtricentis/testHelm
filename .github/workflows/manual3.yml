@@ -50,6 +50,7 @@ jobs:
         #git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
         git remote add origin2 https://github.com/mtricentis/actions2.git
+        git fetch origin2
         echo ' After Clone '
         cd actions2
         ls -ltr
