@@ -42,8 +42,8 @@ jobs:
         #ssh_private_key: ${{ secrets.TOKEN }}
     - name: Copy source to new repo
       env:
-        SOURCE: /home/runner/work/mtricentis/testHelm/main
-        TARGET: /home/runner/work/mtricentis/actions2/main
+        SOURCE: /home/runner/work/testHelm/testHelm
+        TARGET: /home/runner/work/actions2/actions2
       run: |
         pwd
         ls -ltr
