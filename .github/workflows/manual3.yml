@@ -26,7 +26,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Checkout remote repo and push the index.yaml of the chart
+    - name: push changes to remote repo
       env:
         GIT_USERNAME: mtricentis
         GIT_EMAIL: mtricentis@github.com
@@ -34,8 +34,9 @@ jobs:
       run: |
         git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/testHelm target
         #cp -r /home/runner/work/testHelm/testHelm/* target
-        
+        echo ' testHelm directory'
         cd target
+        pwd
         ls -ltr
         git config --global user.name "${{ env.GIT_USERNAME }}"
         git config --global user.email "${{ env.GIT_EMAIL }}"
@@ -43,12 +44,16 @@ jobs:
         mkdir actions2
         chmod 777 *
         cd actions2
+        echo ' testHelm directory'
+        pwd
         ls -ltr
-        git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
+        #git clone https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2 actions2
+        git clone https://github.com/mtricentis/actions2 actions2
+        echo ' After Clone '
         cd actions2
         ls -ltr
         cp /home/runner/work/testHelm/testHelm/target/* .
         git add --all
         git commit -m "Github Actions Automatically Built in `date +"%Y-%m-%d %H:%M"`"
         #git push --force --quiet "https://${{ env.GIT_USERNAME }}:${{ secrets.TOKEN }}@${{ env.DEPLOY_URL }}" main:main
-        git push --force --quiet "https://.:${{ secrets.TOKEN }}@github.com/mtricentis/actions2"
+        git push --force --quiet "https://github.com/mtricentis/actions2"
