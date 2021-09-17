@@ -44,7 +44,8 @@ jobs:
       env:
         SOURCE: /home/runner/work/mtricentis/testHelm/main
         TARGET: /home/runner/work/mtricentis/actions2/main
-      run:
+      run: |
+        echo pwd
         cp ${{ env.SOURCE }} ${{ env.TARGET }}
     - name: Push
       env:
