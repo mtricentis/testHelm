@@ -9,8 +9,9 @@ GITHUB_REPO="$3"
 #API_TOKEN_GITHUB="$4"
 
 CLONE_DIR=output_clone
-
+echo 'check current directory'
 pwd
+ls -ltr
 
 apt-get update && apt-get install git
 apk add --no-cache git
