@@ -39,7 +39,7 @@ ls -la
 git add .
 git commit --message "Update from $GITHUB_REPOSITORY"
 #git push origin main
-git push --tags main
+git push origin --tags
 
 cd ..
 echo "Done!"
