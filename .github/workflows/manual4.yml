@@ -38,7 +38,7 @@ jobs:
           echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/mtricentis/testHelm/releases/latest | jq '.tag_name' | sed 's/\"//g')"
       - name: confirm release tag
         run: |
-          echo ${{ steps.latestrelease.releasetag }}
+          echo ${{ steps.latestrelease.outputs.releasetag }}
     
       - name: tagcheckout
         uses: actions/checkout@v2
