@@ -35,4 +35,11 @@ jobs:
         run: |
           sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2
           #sh ./push.sh
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.2.1
+        with:
+          charts_dir: Charts
+          # version: v1.1.1 # renovate: datasource=github-releases depName=helm/chart-releaser
+        env:
+          CR_TOKEN: '${{ secrets.API_GITHUB_TOKEN }}'
      
