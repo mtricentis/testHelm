@@ -37,7 +37,7 @@ jobs:
           echo "::set-output name=releasetag::$(curl -s https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git/releases/latest | jq '.tag_name' | sed 's/\"//g')"
       - name: confirm release tag
         run: |
-          echo ${{ steps.latestrelease.outputs.releasetag }}
+          echo ${{ steps.latestrelease.releasetag }}
     
       - name: tagcheckout
         uses: actions/checkout@v2
