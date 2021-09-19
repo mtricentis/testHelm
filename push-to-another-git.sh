@@ -19,6 +19,15 @@ apk add --no-cache git
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
 
+git fetch --tags
+echo $?
+git tag --list
+ls -l
+tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+echo $tag
+git checkout $tag -b latest
+git log --oneline --graph
+
 git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" "$CLONE_DIR"
 
 ls -l
