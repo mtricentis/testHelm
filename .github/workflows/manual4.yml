@@ -22,11 +22,28 @@ jobs:
     runs-on: ubuntu-latest
     container: pandoc/latex
     steps:
-      - uses: actions/checkout@v2
-      - name: Checkout branch
+      - name: get latest release with tag
+        id: latestrelease
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          GITHUB_REPO: testHelm
         run: |
+          echo "::set-output name=releasetag::$(curl -s https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git/releases/latest | jq '.tag_name' | sed 's/\"//g')"
+      - name: confirm release tag
+        run: |
+          echo ${{ steps.latestrelease.outputs.releasetag }}
+    
+      - name: tagcheckout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.latestrelease.outputs.releasetag }}
           
-          ls -l
+        #- uses: actions/checkout@v2
+        #- name: Checkout branch
+        #run: |
+          
+         # ls -l
       - name: checks installation pandoc
         run: |
           which pandoc
