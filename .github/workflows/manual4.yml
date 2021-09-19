@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: test things
         run: |
-          git fetch --unshallow --tags
+          git fetch --tags
           echo $?
           git tag --list
           ls -l
