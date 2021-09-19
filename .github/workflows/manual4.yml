@@ -35,6 +35,12 @@ jobs:
         run: |
           sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2
           #sh ./push.sh
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: 3.4.0 #renovate: datasource=github-releases depName=helm/helm
+      - name: Add external Helm repos
+        run: helm repo add reloader https://stakater.github.io/stakater-charts
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
         with:
