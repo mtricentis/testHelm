@@ -20,7 +20,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/latex
+    #container: pandoc/latex
     steps:
       - name: get latest release with tag
         id: latestrelease
@@ -30,10 +30,10 @@ jobs:
           GITHUB_REPO: testHelm
         run: |
         
-          wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9_i386.deb
-          ar x apt_2.3.9_i386.deb
+          #wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9_i386.deb
+          #ar x apt_2.3.9_i386.deb
           #dpkg -i apt_2.3.9_i386.deb
-          brew install jq
+          apt-get install jq
           echo "::set-output name=releasetag::$(curl -s https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git/releases/latest | jq '.tag_name' | sed 's/\"//g')"
       - name: confirm release tag
         run: |
