@@ -58,7 +58,8 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
           LATEST_RELEASE: ${{ steps.latestrelease.outputs.releasetag }}
         run: |
-          pwd
+          cwd=$(pwd)
+          echo $cwd
           #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
-          sh ./repotag.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
+          sh ./repotag.sh $cwd mtricentis helm2 $env.LATEST_RELEASE
           #sh ./push.sh
