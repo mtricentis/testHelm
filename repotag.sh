@@ -15,10 +15,10 @@ echo 'check current directory'
 pwd
 ls -ltr
 #make directory
-#mkdir /home/runner/work/$GITHUB_USERNAME
+mkdir /home/runner/work/$GITHUB_USERNAME
 #chmod 777 *
-#cd /home/runner/work/$GITHUB_USERNAME
-#pwd
+cd /home/runner/work/$GITHUB_USERNAME
+pwd
 apt-get update && apt-get install git
 #apt-get add --no-cache git
 
@@ -30,22 +30,19 @@ echo 'check current directory after Clone'
 pwd
 ls -ltr
 
-#cd $CLONE_DIR
-#echo "After cd $CLONE_DIR"
+cd $CLONE_DIR
+echo "After cd $CLONE_DIR"
 pwd
 ls -ltr
-#cp -r $FOLDER .
-cp -r . $CLONE_DIR
+cp -r $FOLDER .
+#cp -r . $CLONE_DIR
 
-cd $CLONE_DIR
-pwd
-ls -la
 
 
 #git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
 #git branch -ra
 #git remote -v
-ls -la
+
 #git tag $GITHUB_TAG
 #git add --all
 #git commit --message "Update from $GITHUB_REPOSITORY"
