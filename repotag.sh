@@ -31,14 +31,14 @@ git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.gi
 echo 'check current directory after Clone'
 pwd
 ls -ltr
-cd $CLONE_DIR
-cp -r $FOLDER $CLONE_DIR
+#cd /home/runner/work/$GITHUB_USERNAME/$CLONE_DIR
+cp -r $FOLDER .
 #cp -r . $CLONE_DIR
 
 echo "After cd $CLONE_DIR"
 #git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
-git branch -ra
-git remote -v
+#git branch -ra
+#git remote -v
 ls -la
 #git tag $GITHUB_TAG
 git add --all
