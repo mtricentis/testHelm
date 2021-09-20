@@ -14,20 +14,20 @@ CLONE_DIR=output_clone
 echo 'check current directory'
 pwd
 #ls -ltr
+#make directory
+mkdir /home/runner/work/$GITHUB_USERNAME
 
+mkdir $GITHUB_REPO
+chmod 777 *
+cd /home/runner/work/$GITHUB_USERNAME/$GITHUB_REPO
+pwd
 apt-get update && apt-get install git
 #apt-get add --no-cache git
 
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
 
-#make directory
-mkdir /home/runner/work/$GITHUB_USERNAME
-chmod 777 *
-mkdir $GITHUB_REPO
-chmod 777 *
-cd /home/runner/work/$GITHUB_USERNAME/$GITHUB_REPO
-pwd
+
 
 git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" "$CLONE_DIR"
 echo 'check current directory after Clone'
