@@ -22,7 +22,9 @@ git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
 
 #make directory
-mkdir /home/runner/work/$GITHUB_USERNAME/$GITHUB_REPO
+mkdir /home/runner/work/$GITHUB_USERNAME
+chmod 777 *
+mkdir $GITHUB_REPO
 chmod 777 *
 cd /home/runner/work/$GITHUB_USERNAME/$GITHUB_REPO
 pwd
