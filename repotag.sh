@@ -12,8 +12,6 @@ GITHUB_TAG="$4"
 
 CLONE_DIR=output_clone
 echo 'check current directory'
-pwd
-ls -ltr
 #make directory
 mkdir /home/runner/work/$GITHUB_USERNAME
 #chmod 777 *
@@ -27,8 +25,6 @@ git config --global user.name "$GITHUB_USERNAME"
 git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" $CLONE_DIR
 
 echo 'check current directory after Clone'
-pwd
-ls -ltr
 
 cd $CLONE_DIR
 echo "After cd $CLONE_DIR"
@@ -46,9 +42,9 @@ ls -ltr
 #git remote -v
 
 #git tag $GITHUB_TAG
-#git add --all
-#git commit --message "Update from $GITHUB_REPOSITORY"
-#git push origin main
+git add --all
+git commit --message "Update from $GITHUB_REPOSITORY"
+git push origin main
 #git push origin --tags
 
 cd ..
