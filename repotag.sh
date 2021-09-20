@@ -16,10 +16,8 @@ pwd
 #ls -ltr
 #make directory
 mkdir /home/runner/work/$GITHUB_USERNAME
-
-mkdir $GITHUB_REPO
 chmod 777 *
-cd /home/runner/work/$GITHUB_USERNAME/$GITHUB_REPO
+cd /home/runner/work/$GITHUB_USERNAME
 pwd
 apt-get update && apt-get install git
 #apt-get add --no-cache git
