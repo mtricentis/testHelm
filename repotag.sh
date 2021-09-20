@@ -34,7 +34,7 @@ cd $CLONE_DIR
 echo "After cd $CLONE_DIR"
 pwd
 ls -ltr
-cp -r $FOLDER .
+cp -r $FOLDER/* .
 #cp -r . $CLONE_DIR
 
 
