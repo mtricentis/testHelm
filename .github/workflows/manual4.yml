@@ -59,6 +59,7 @@ jobs:
           LATEST_RELEASE: ${{ steps.latestrelease.outputs.releasetag }}
         run: |
           pwd
-          sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
+          #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
+          sh ./repotag.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
           #sh ./push.sh
       
