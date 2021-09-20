@@ -58,6 +58,6 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
         run: |
           ls -l
-          sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2
+          sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 ${{ steps.latestrelease.outputs.releasetag }}
           #sh ./push.sh
       
