@@ -61,6 +61,6 @@ jobs:
           cwd=$(pwd)
           echo $cwd
           #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 1.1
-          sh ./repotag.sh $cwd mtricentis helm2 ${{ env.LATEST_RELEASE }}
+          ./repotag.sh $cwd mtricentis helm2 ${{ env.LATEST_RELEASE }}
           #sh ./push.sh
-        shell: bash
+        
