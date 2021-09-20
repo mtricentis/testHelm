@@ -21,6 +21,11 @@ apt-get update && apt-get install git
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
 
+#make directory
+mkdir /home/runner/work/$GITHUB_USERNAME/$GITHUB_REPO
+chmod 777 *
+cd /home/runner/work/$GITHUB_USERNAME/$GITHUB_REPO
+pwd
 
 git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" "$CLONE_DIR"
 echo 'check current directory after Clone'
