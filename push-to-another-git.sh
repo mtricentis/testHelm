@@ -24,6 +24,8 @@ git config --global user.name "$GITHUB_USERNAME"
 
 git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" "$CLONE_DIR"
 
+
+
 #ls -l
 
 
@@ -36,13 +38,15 @@ git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.gi
 cp -r . $CLONE_DIR
 cd "$CLONE_DIR"
 echo "After cd $CLONE_DIR"
-
+git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
+git branch -ra
+git remote -v
 #ls -la
 git tag $GITHUB_TAG
 git add .
 git commit --message "Update from $GITHUB_REPOSITORY"
 #git push origin main
-git push origin --tags
+git push origin2 --tags
 
 cd ..
 echo "Done!"
