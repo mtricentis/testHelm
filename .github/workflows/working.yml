@@ -60,6 +60,8 @@ jobs:
         run: |
           cwd=$(pwd)
           echo $cwd
+          
+          chmod 777 *
           ls -ltr
           #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 1.1
           ./repotag.sh $cwd mtricentis helm2 ${{ env.LATEST_RELEASE }}
