@@ -36,8 +36,8 @@ ls -la
 git tag $GITHUB_TAG
 git add .
 git commit --message "Update from $GITHUB_REPOSITORY"
-#git push origin main
-git push origin --tags
+git push origin main
+#git push origin --tags
 
 cd ..
 echo "Done!"
