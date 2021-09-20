@@ -26,10 +26,10 @@ git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.gi
 echo 'check current directory after Clone'
 pwd
 
-cp -r $FOLDER $CLONE_DIR
+cp -r . $CLONE_DIR
 cd "$CLONE_DIR"
 echo "After cd $CLONE_DIR"
-git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
+#git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
 git branch -ra
 git remote -v
 ls -la
@@ -37,7 +37,7 @@ git tag $GITHUB_TAG
 git add .
 git commit --message "Update from $GITHUB_REPOSITORY"
 #git push origin main
-git push origin2 --tags
+git push origin --tags
 
 cd ..
 echo "Done!"
