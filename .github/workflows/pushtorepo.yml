@@ -1,0 +1,64 @@
+# This is a basic workflow that is manually triggered
+
+name: PushTagToPublicRepo
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    #container: pandoc/latex
+    steps:
+      - name: get latest release with tag
+        id: latestrelease
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          #GITHUB_REPO: testHelm
+        run: |
+        
+          #wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9_i386.deb
+          #ar x apt_2.3.9_i386.deb
+          #dpkg -i apt_2.3.9_i386.deb
+          #sudo apt-get install jq
+          
+          echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/mtricentis/testHelm/releases/latest | jq '.tag_name' | sed 's/\"//g')"
+      - name: confirm release tag
+        run: |
+          echo ${{ steps.latestrelease.outputs.releasetag }}
+    
+      - name: tagcheckout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.latestrelease.outputs.releasetag }}
+          
+        #- uses: actions/checkout@v2
+        #- name: Checkout branch
+        #run: |
+          
+         # ls -l
+     # - name: checks installation pandoc
+       # run: |
+         # which pandoc
+      - name: push directory
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
+          LATEST_RELEASE: ${{ steps.latestrelease.outputs.releasetag }}
+        run: |
+          pwd
+          #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
+          sh ./repotag.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
+          #sh ./push.sh
