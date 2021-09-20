@@ -66,6 +66,7 @@ jobs:
           remoteRepo=${{ inputs.name }}
           echo $remoteRepo
           #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis qtestChart 1.1
-          ./repotag.sh $cwd mtricentis qtestChart ${{ env.LATEST_RELEASE }}
+          #./repotag.sh $cwd mtricentis qtestChart ${{ env.LATEST_RELEASE }}
+          pushtopublicrepo.sh $cwd mtricentis qtestChart ${{ env.LATEST_RELEASE }}
           #sh ./push.sh
         
