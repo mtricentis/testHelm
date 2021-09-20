@@ -32,10 +32,12 @@ ls -ltr
 
 cd $CLONE_DIR
 echo "After cd $CLONE_DIR"
-pwd
-ls -ltr
+
 cp -r $FOLDER/* .
 #cp -r . $CLONE_DIR
+
+pwd
+ls -ltr
 
 
 
@@ -46,7 +48,7 @@ cp -r $FOLDER/* .
 #git tag $GITHUB_TAG
 #git add --all
 #git commit --message "Update from $GITHUB_REPOSITORY"
-3git push origin main
+#git push origin main
 #git push origin --tags
 
 cd ..
