@@ -44,6 +44,12 @@ ls -ltr
 #git tag $GITHUB_TAG
 git add --all
 git commit --message "Update from $GITHUB_REPOSITORY"
+git status
+status=git status
+if($status!=0){
+
+echo "No commits are there"
+}
 git push origin main
 #git push origin --tags
 
