@@ -49,9 +49,9 @@ status=git status
 if($status!=0){
 
 echo "No commits are there"
-}
+}else{
 git push origin main
 #git push origin --tags
-
+}
 cd ..
 echo "Done!"
