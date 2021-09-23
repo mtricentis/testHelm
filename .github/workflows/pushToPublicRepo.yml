@@ -78,6 +78,6 @@ jobs:
           chmod 777 ./.github/scripts/pushToPublicRepo.sh
           #git add entrypoint.sh
           #git commit
-          ./.github/scripts/pushToPublicRepo.sh $cwd ${{ env.GITHUB_USERNAME }} ${{ github.event.inputs.branchName }} ${{ github.event.inputs.helmChartVersion }} ${{ github.event.inputs.qtestVersion }}
+          ./.github/scripts/pushToPublicRepo.sh $cwd ${{ secrets.USERNAME }} ${{ github.event.inputs.branchName }} ${{ github.event.inputs.helmChartVersion }} ${{ github.event.inputs.qtestVersion }}
           #sh ./push.sh
         
