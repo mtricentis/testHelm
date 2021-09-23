@@ -19,7 +19,7 @@ cd /home/runner/work/$GITHUB_USERNAME
 pwd
 apt-get update && apt-get install git
 #apt-get add --no-cache git
-apt install yq -y
+
 
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
@@ -35,7 +35,7 @@ cp -r $FOLDER/* .
 
 pwd
 ls -ltr
-
+sed -i 's/\(.*version:.*\)/version: 1.0/g' chart.yml
 
 
 #git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
