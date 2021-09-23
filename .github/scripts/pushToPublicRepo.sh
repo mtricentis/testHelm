@@ -22,13 +22,13 @@ apt-get update && apt-get install git
 
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
-git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" $CLONE_DIR
+#git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" $CLONE_DIR
 
 echo 'check current directory after Clone'
 
 cd $CLONE_DIR
 echo "After cd $CLONE_DIR"
-
+git checkout -b newbranch
 cp -r $FOLDER/* .
 #cp -r . $CLONE_DIR
 
@@ -46,7 +46,7 @@ ls -ltr
 git add --all
 git commit --message "Update from $GITHUB_REPOSITORY"
 
-git push origin main --force
+git push origin newbranch --force
 #git push origin --tags
 
 cd ..
