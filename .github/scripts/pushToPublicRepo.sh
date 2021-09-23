@@ -33,7 +33,7 @@ echo 'check current directory after Clone'
 
 cd $CLONE_DIR
 echo "After cd $CLONE_DIR"
-git checkout -b newbranch
+git checkout -b $GITHUB_REPO
 cp -r $FOLDER/* .
 #cp -r . $CLONE_DIR
 
@@ -53,7 +53,7 @@ sed -i 's/\(.*appVersion:.*\)/appVersion: '"$QTEST_MGR_VERSION"'/g' chart.yml
 git add --all
 git commit --message "Update from $GITHUB_REPOSITORY"
 
-git push origin newbranch --force
+git push origin $GITHUB_REPO --force
 #git push origin --tags
 
 cd ..
