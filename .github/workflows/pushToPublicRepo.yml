@@ -8,12 +8,13 @@ on:
   workflow_dispatch:
   # Inputs the workflow accepts.
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Please provide Version'
-        # Default value if no value is explicitly provided
+      helmChartVersion:
+        description: 'Please provide Helm Chart Version'
         default: '1.0'
-        # Input has to be provided for the workflow to run
+        required: true
+      qtestVersion:
+        description: 'Please provide qtest Manager Version'
+        default: '10.5.2'
         required: true
   
     
@@ -72,6 +73,6 @@ jobs:
           chmod 777 ./.github/scripts/pushToPublicRepo.sh
           #git add entrypoint.sh
           #git commit
-          ./.github/scripts/pushToPublicRepo.sh $cwd mtricentis qtestChart ${{ env.LATEST_RELEASE }}
+          ./.github/scripts/pushToPublicRepo.sh $cwd mtricentis qtestChart ${{ github.event.inputs.helmChartVersion }} ${{ github.event.inputs.qtestVersion }}
           #sh ./push.sh
         
