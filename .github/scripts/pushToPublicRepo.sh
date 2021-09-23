@@ -40,8 +40,8 @@ cp -r $FOLDER/* .
 pwd
 ls -ltr
 
-sed -i 's/\(.*version:.*\)/version: ${HELM_CHART_VERSION}/g' chart.yml
-sed -i 's/\(.*appVersion:.*\)/appVersion: ${QTEST_MGR_VERSION}/g' chart.yml
+sed -i s/\(.*version:.*\)/version: $HELM_CHART_VERSION/g chart.yml
+sed -i s/\(.*appVersion:.*\)/appVersion: $QTEST_MGR_VERSION/g chart.yml
 
 
 #git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
