@@ -19,6 +19,7 @@ cd /home/runner/work/$GITHUB_USERNAME
 pwd
 apt-get update && apt-get install git
 #apt-get add --no-cache git
+apt install yq -y
 
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
