@@ -16,6 +16,11 @@ on:
         description: 'Please provide qtest Manager Version'
         default: '10.5.2'
         required: true
+      branchName:
+        description: 'Please provide branch name that needs to be committed to public repo'
+        default: newBranch
+        required: true
+    
   
     
 
@@ -73,6 +78,6 @@ jobs:
           chmod 777 ./.github/scripts/pushToPublicRepo.sh
           #git add entrypoint.sh
           #git commit
-          ./.github/scripts/pushToPublicRepo.sh $cwd mtricentis qtestChart ${{ github.event.inputs.helmChartVersion }} ${{ github.event.inputs.qtestVersion }}
+          ./.github/scripts/pushToPublicRepo.sh $cwd ${{ env.GITHUB_USERNAME }} ${{ github.event.inputs.branchName }} ${{ github.event.inputs.helmChartVersion }} ${{ github.event.inputs.qtestVersion }}
           #sh ./push.sh
         
