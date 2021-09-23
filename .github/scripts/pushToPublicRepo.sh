@@ -11,6 +11,8 @@ HELM_CHART_VERSION="$4"
 QTEST_MGR_VERSION="$5"
 #API_TOKEN_GITHUB="$4"
 
+echo $HELM_CHART_VERSION
+echo $QTEST_MGR_VERSION
 
 CLONE_DIR=output_clone
 echo 'check current directory'
@@ -38,8 +40,8 @@ cp -r $FOLDER/* .
 pwd
 ls -ltr
 
-sed -i 's/\(.*version:.*\)/version: $HELM_CHART_VERSION/g' chart.yml
-sed -i 's/\(.*appVersion:.*\)/appVersion: $QTEST_MGR_VERSION/g' chart.yml
+sed -i 's/\(.*version:.*\)/version: ${HELM_CHART_VERSION}/g' chart.yml
+sed -i 's/\(.*appVersion:.*\)/appVersion: ${QTEST_MGR_VERSION}/g' chart.yml
 
 
 #git remote set-url origin2 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
