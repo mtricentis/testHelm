@@ -27,7 +27,7 @@ apt-get update && apt-get install git
 
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
-git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$GITHUB_REPO.git" $CLONE_DIR
+git clone "https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/qtestChart.git" $CLONE_DIR
 
 echo 'check current directory after Clone'
 
