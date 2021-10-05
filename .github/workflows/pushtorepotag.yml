@@ -20,7 +20,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/latex
+    #container: pandoc/latex
     steps:
       - name: get latest release with tag
         id: latestrelease
@@ -50,9 +50,7 @@ jobs:
         #run: |
           
          # ls -l
-      - name: checks installation pandoc
-        run: |
-          which pandoc
+      
       - name: push directory
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
