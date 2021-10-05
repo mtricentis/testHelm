@@ -30,10 +30,10 @@ jobs:
           #GITHUB_REPO: testHelm
         run: |
         
-          #wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9_i386.deb
-          #ar x apt_2.3.9_i386.deb
-          #dpkg -i apt_2.3.9_i386.deb
-          #sudo apt-get install jq
+          wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9_i386.deb
+          ar x apt_2.3.9_i386.deb
+          dpkg -i apt_2.3.9_i386.deb
+          sudo apt-get install jq
           
           echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/mtricentis/testHelm/releases/latest | jq '.tag_name' | sed 's/\"//g')"
       - name: confirm release tag
