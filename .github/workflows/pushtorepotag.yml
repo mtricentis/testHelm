@@ -31,7 +31,7 @@ jobs:
         run: |
         
           wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.3.9_i386.deb
-          ar x apt_2.3.9_i386.deb
+          #ar x apt_2.3.9_i386.deb
           dpkg -i apt_2.3.9_i386.deb
           sudo apt-get install jq
           
