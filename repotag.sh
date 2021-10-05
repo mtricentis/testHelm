@@ -41,11 +41,11 @@ ls -ltr
 #git branch -ra
 #git remote -v
 
-#git tag $GITHUB_TAG
+git tag $GITHUB_TAG
 git add --all
 git commit --message "Update from $GITHUB_REPOSITORY"
-git push origin main
-#git push origin --tags
+#git push origin main
+git push origin --tags
 
 cd ..
 echo "Done!"
