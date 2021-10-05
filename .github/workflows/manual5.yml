@@ -62,6 +62,6 @@ jobs:
           chmod 777 *
           chmod 777 ./.github/scripts/repotag.sh
           #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis helm2 $env.LATEST_RELEASE
-          sh ./.github/scripts/repotag.sh /home/work/testHelm/testHelm mtricentis helm2 ${{ env.LATEST_RELEASE }}
+          ./.github/scripts/repotag.sh /home/work/testHelm/testHelm mtricentis helm2 ${{ env.LATEST_RELEASE }}
           #sh ./push.sh
       
