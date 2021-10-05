@@ -12,6 +12,8 @@ GITHUB_TAG="$4"
 
 CLONE_DIR=output_clone
 echo 'check current directory'
+pwd
+echo 'make directory $GITHUB_USERNAME'
 #make directory
 mkdir /home/runner/work/$GITHUB_USERNAME
 #chmod 777 *
