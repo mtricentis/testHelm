@@ -16,7 +16,7 @@ pwd
 #ls -ltr
 
 apt-get update && apt-get install git
-apk add --no-cache git
+#apk add --no-cache git
 
 git config --global user.email "mtricentis@g.com"
 git config --global user.name "$GITHUB_USERNAME"
