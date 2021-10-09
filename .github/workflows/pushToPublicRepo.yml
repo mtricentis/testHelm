@@ -75,7 +75,7 @@ jobs:
           echo $remoteRepo
           sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis qtestChart 1.1
           #./repotag.sh $cwd mtricentis qtestChart ${{ env.LATEST_RELEASE }}
-          chmod 777 ./.github/scripts/pushToPublicRepo.sh
+          #chmod 777 ./.github/scripts/pushToPublicRepo.sh
           #git add entrypoint.sh
           #git commit
           #./.github/scripts/pushToPublicRepo.sh $cwd ${{ secrets.USERNAME }} ${{ github.event.inputs.branchName }} ${{ github.event.inputs.helmChartVersion }} ${{ github.event.inputs.qtestVersion }}
