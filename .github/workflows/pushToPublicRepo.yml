@@ -50,8 +50,8 @@ jobs:
     
       - name: tagcheckout
         uses: actions/checkout@v2
-        #with:
-        #  ref: ${{ steps.latestrelease.outputs.releasetag }}
+        with:
+          ref: ${{ steps.latestrelease.outputs.releasetag }}
           
         #- uses: actions/checkout@v2
         #- name: Checkout branch
