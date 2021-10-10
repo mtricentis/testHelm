@@ -73,9 +73,9 @@ jobs:
           ls -ltr
           remoteRepo=${{ inputs.name }}
           echo $remoteRepo
-          chmod 777 ./pushtopublicrepo1.sh
+          chmod 777 ./.github/scripts/pushtopublic.sh
           #sh ./push-to-another-git.sh /home/work/testHelm/testHelm mtricentis qtestChart 1.2
-          sh ./pushtopublicrepo1.sh /home/work/testHelm/testHelm mtricentis qtestChart 1.2
+          sh ./.github/scripts/pushtopublic.sh /home/work/testHelm/testHelm mtricentis qtestChart 1.2
           
           #./repotag.sh $cwd mtricentis qtestChart ${{ env.LATEST_RELEASE }}
           #chmod 777 ./.github/scripts/pushToPublicRepo.sh
